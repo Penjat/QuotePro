@@ -8,22 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		0B6016F5221CB55D0078EE5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6016F4221CB55D0078EE5A /* AppDelegate.swift */; };
-		0B6016F7221CB55D0078EE5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6016F6221CB55D0078EE5A /* ViewController.swift */; };
 		0B6016FA221CB55D0078EE5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B6016F8221CB55D0078EE5A /* Main.storyboard */; };
 		0B6016FD221CB55D0078EE5A /* QuotePro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0B6016FB221CB55D0078EE5A /* QuotePro.xcdatamodeld */; };
 		0B6016FF221CB55E0078EE5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B6016FE221CB55E0078EE5A /* Assets.xcassets */; };
 		0B601702221CB55E0078EE5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B601700221CB55E0078EE5A /* LaunchScreen.storyboard */; };
+		0B60170A221CB6A20078EE5A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B601709221CB6A20078EE5A /* HomeViewController.swift */; };
+		0B60170C221CB8230078EE5A /* QuoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B60170B221CB8230078EE5A /* QuoteCell.swift */; };
+		0B60170E221CBA300078EE5A /* Quote.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B60170D221CBA300078EE5A /* Quote.xib */; };
+		0B601710221CBBC10078EE5A /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B60170F221CBBC10078EE5A /* QuoteView.swift */; };
+		0B601712221CBCC90078EE5A /* QuoteCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B601711221CBCC90078EE5A /* QuoteCreationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B6016F1221CB55D0078EE5A /* QuotePro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuotePro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B6016F4221CB55D0078EE5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0B6016F6221CB55D0078EE5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0B6016F9221CB55D0078EE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B6016FC221CB55D0078EE5A /* QuotePro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuotePro.xcdatamodel; sourceTree = "<group>"; };
 		0B6016FE221CB55E0078EE5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B601701221CB55E0078EE5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B601703221CB55E0078EE5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B601709221CB6A20078EE5A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0B60170B221CB8230078EE5A /* QuoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCell.swift; sourceTree = "<group>"; };
+		0B60170D221CBA300078EE5A /* Quote.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Quote.xib; sourceTree = "<group>"; };
+		0B60170F221CBBC10078EE5A /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		0B601711221CBCC90078EE5A /* QuoteCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCreationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +64,13 @@
 		0B6016F3221CB55D0078EE5A /* QuotePro */ = {
 			isa = PBXGroup;
 			children = (
+				0B601709221CB6A20078EE5A /* HomeViewController.swift */,
+				0B601711221CBCC90078EE5A /* QuoteCreationViewController.swift */,
 				0B6016F4221CB55D0078EE5A /* AppDelegate.swift */,
-				0B6016F6221CB55D0078EE5A /* ViewController.swift */,
 				0B6016F8221CB55D0078EE5A /* Main.storyboard */,
+				0B60170D221CBA300078EE5A /* Quote.xib */,
+				0B60170F221CBBC10078EE5A /* QuoteView.swift */,
+				0B60170B221CB8230078EE5A /* QuoteCell.swift */,
 				0B6016FE221CB55E0078EE5A /* Assets.xcassets */,
 				0B601700221CB55E0078EE5A /* LaunchScreen.storyboard */,
 				0B601703221CB55E0078EE5A /* Info.plist */,
@@ -128,6 +140,7 @@
 				0B601702221CB55E0078EE5A /* LaunchScreen.storyboard in Resources */,
 				0B6016FF221CB55E0078EE5A /* Assets.xcassets in Resources */,
 				0B6016FA221CB55D0078EE5A /* Main.storyboard in Resources */,
+				0B60170E221CBA300078EE5A /* Quote.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B6016F7221CB55D0078EE5A /* ViewController.swift in Sources */,
+				0B601712221CBCC90078EE5A /* QuoteCreationViewController.swift in Sources */,
+				0B60170C221CB8230078EE5A /* QuoteCell.swift in Sources */,
+				0B601710221CBBC10078EE5A /* QuoteView.swift in Sources */,
 				0B6016F5221CB55D0078EE5A /* AppDelegate.swift in Sources */,
 				0B6016FD221CB55D0078EE5A /* QuotePro.xcdatamodeld in Sources */,
+				0B60170A221CB6A20078EE5A /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
