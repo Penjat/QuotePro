@@ -1,10 +1,4 @@
-//
-//  AppDelegate.swift
-//  QuotePro
-//
-//  Created by Spencer Symington on 2019-02-19.
-//  Copyright © 2019 Spencer Symington. All rights reserved.
-//
+
 
 import UIKit
 import CoreData

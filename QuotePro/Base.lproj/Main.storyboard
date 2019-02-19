@@ -53,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="1071.2" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Quote Creation View Controller-->
         <scene sceneID="knD-zw-CyA">
             <objects>
-                <viewController id="CK8-Hm-18a" sceneMemberID="viewController">
+                <viewController id="CK8-Hm-18a" customClass="QuoteCreationViewController" customModule="QuotePro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ffb-M6-tsa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

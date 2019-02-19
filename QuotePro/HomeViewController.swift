@@ -11,6 +11,11 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
       quoteTableView.dataSource = self
       quoteTableView.delegate = self
     }
+  
+  
+  
+  
+  
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 5
   }
