@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CK8-Hm-18a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B5K-Vk-pvG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,13 +22,28 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="quoteCell" id="VDM-6e-fjz" customClass="QuoteCell" customModule="QuotePro" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="quoteCell" rowHeight="120" id="VDM-6e-fjz" customClass="QuoteCell" customModule="QuotePro" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VDM-6e-fjz" id="8RB-kc-hpv">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0XP-jv-sgu" customClass="QuoteView" customModule="QuotePro" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="359" height="103.5"/>
+                                                    <color key="backgroundColor" red="0.0" green="1" blue="0.061501125429999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0XP-jv-sgu" firstAttribute="leading" secondItem="8RB-kc-hpv" secondAttribute="leading" constant="8" id="3ER-Xe-3VG"/>
+                                                <constraint firstItem="0XP-jv-sgu" firstAttribute="top" secondItem="8RB-kc-hpv" secondAttribute="top" constant="8" id="OF5-LQ-MqA"/>
+                                                <constraint firstAttribute="trailing" secondItem="0XP-jv-sgu" secondAttribute="trailing" constant="8" id="WuC-TA-zBJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="0XP-jv-sgu" secondAttribute="bottom" constant="8" id="hRL-1G-Po9"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="quoteView" destination="0XP-jv-sgu" id="Kdt-4w-eFj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -43,15 +58,61 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Mfc-EV-ADv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ydz-aT-NXJ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ydz-aT-NXJ">
+                            <connections>
+                                <segue destination="CK8-Hm-18a" kind="show" id="P2D-zP-56v"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="quoteTableView" destination="GMI-mP-rQS" id="14c-ID-faE"/>
+                        <segue destination="IJN-3u-BUi" kind="show" identifier="toShare" id="hgL-u8-csA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1071.2" y="133.5832083958021"/>
+        </scene>
+        <!--Share View Controller-->
+        <scene sceneID="ZeJ-Cr-Oax">
+            <objects>
+                <viewController id="IJN-3u-BUi" customClass="ShareViewController" customModule="QuotePro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q5K-2s-rhC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGN-tT-xUU" customClass="QuoteView" customModule="QuotePro" customModuleProvider="target">
+                                <rect key="frame" x="8" y="72" width="359" height="179.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vGN-tT-xUU" secondAttribute="height" multiplier="2:1" id="t1j-E0-H4A"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0L-Zv-wXP">
+                                <rect key="frame" x="168.5" y="267.5" width="38" height="30"/>
+                                <state key="normal" title="share"/>
+                                <connections>
+                                    <action selector="pressedShare:" destination="IJN-3u-BUi" eventType="touchUpInside" id="0xg-Q2-4um"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="j0L-Zv-wXP" firstAttribute="top" secondItem="vGN-tT-xUU" secondAttribute="bottom" constant="16" id="4Qd-Jr-jng"/>
+                            <constraint firstItem="j0L-Zv-wXP" firstAttribute="centerX" secondItem="J12-oH-ceM" secondAttribute="centerX" id="5Mc-3d-KHc"/>
+                            <constraint firstItem="vGN-tT-xUU" firstAttribute="top" secondItem="J12-oH-ceM" secondAttribute="top" constant="8" id="Axf-3F-0ue"/>
+                            <constraint firstItem="vGN-tT-xUU" firstAttribute="leading" secondItem="J12-oH-ceM" secondAttribute="leading" constant="8" id="Mfg-46-74A"/>
+                            <constraint firstItem="J12-oH-ceM" firstAttribute="trailing" secondItem="vGN-tT-xUU" secondAttribute="trailing" constant="8" id="b6W-E7-IRl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J12-oH-ceM"/>
+                    </view>
+                    <connections>
+                        <outlet property="quoteView" destination="vGN-tT-xUU" id="BKx-Zk-bU6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tjA-rp-2RC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1069" y="852"/>
         </scene>
         <!--Quote Creation View Controller-->
         <scene sceneID="knD-zw-CyA">
@@ -62,19 +123,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Re-Ac-PRS" customClass="QuoteView" customModule="QuotePro" customModuleProvider="target">
-                                <rect key="frame" x="16" y="36" width="343" height="148"/>
+                                <rect key="frame" x="16" y="80" width="343" height="171.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="1Re-Ac-PRS" secondAttribute="height" multiplier="343:148" id="kU8-rx-ZDp"/>
+                                    <constraint firstAttribute="width" secondItem="1Re-Ac-PRS" secondAttribute="height" multiplier="2:1" id="kU8-rx-ZDp"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tN7-Ak-7Ka">
-                                <rect key="frame" x="40.5" y="192" width="139" height="30"/>
+                                <rect key="frame" x="40.5" y="259.5" width="139" height="30"/>
                                 <state key="normal" title="random background"/>
+                                <connections>
+                                    <action selector="pressedRandBackground:" destination="CK8-Hm-18a" eventType="touchUpInside" id="xde-y2-YIl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMp-zQ-sKX">
-                                <rect key="frame" x="195.5" y="192" width="96" height="30"/>
+                                <rect key="frame" x="195.5" y="259.5" width="96" height="30"/>
                                 <state key="normal" title="random quote"/>
+                                <connections>
+                                    <action selector="pressedRandQuote:" destination="CK8-Hm-18a" eventType="touchUpInside" id="G0F-ma-j51"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,6 +156,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e6Y-95-WM6"/>
                     </view>
+                    <connections>
+                        <outlet property="quoteView" destination="1Re-Ac-PRS" id="2u4-yz-HQJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qZb-bs-PiA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

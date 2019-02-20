@@ -1,15 +1,13 @@
-//
-//  QuoteView.swift
-//  QuotePro
-//
-//  Created by Spencer Symington on 2019-02-19.
-//  Copyright © 2019 Spencer Symington. All rights reserved.
-//
+
 
 import UIKit
 
 class QuoteView: UIView {
+  
   @IBOutlet var contentView: UIView!
+  @IBOutlet weak var quoteText: UILabel!
+  @IBOutlet weak var authorText: UILabel!
+  @IBOutlet weak var backgroundImg: UIImageView!
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -27,5 +25,13 @@ class QuoteView: UIView {
     contentView.frame = self.bounds
     contentView.autoresizingMask = [.flexibleWidth , .flexibleHeight]
   }
+  func update(quote:String , author:String){
+    quoteText.text = quote
+    authorText.text = author
+  }
+  func update(image:UIImage){
+    backgroundImg.image = image
+  }
+  
 
 }

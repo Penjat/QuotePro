@@ -17,6 +17,8 @@
 		0B60170E221CBA300078EE5A /* Quote.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B60170D221CBA300078EE5A /* Quote.xib */; };
 		0B601710221CBBC10078EE5A /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B60170F221CBBC10078EE5A /* QuoteView.swift */; };
 		0B601712221CBCC90078EE5A /* QuoteCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B601711221CBCC90078EE5A /* QuoteCreationViewController.swift */; };
+		0B601714221CC6DA0078EE5A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B601713221CC6DA0078EE5A /* APIManager.swift */; };
+		0B601716221D054B0078EE5A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B601715221D054B0078EE5A /* ShareViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		0B60170D221CBA300078EE5A /* Quote.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Quote.xib; sourceTree = "<group>"; };
 		0B60170F221CBBC10078EE5A /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		0B601711221CBCC90078EE5A /* QuoteCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCreationViewController.swift; sourceTree = "<group>"; };
+		0B601713221CC6DA0078EE5A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		0B601715221D054B0078EE5A /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +70,10 @@
 			children = (
 				0B601709221CB6A20078EE5A /* HomeViewController.swift */,
 				0B601711221CBCC90078EE5A /* QuoteCreationViewController.swift */,
+				0B601715221D054B0078EE5A /* ShareViewController.swift */,
 				0B6016F4221CB55D0078EE5A /* AppDelegate.swift */,
 				0B6016F8221CB55D0078EE5A /* Main.storyboard */,
+				0B601713221CC6DA0078EE5A /* APIManager.swift */,
 				0B60170D221CBA300078EE5A /* Quote.xib */,
 				0B60170F221CBBC10078EE5A /* QuoteView.swift */,
 				0B60170B221CB8230078EE5A /* QuoteCell.swift */,
@@ -157,6 +163,8 @@
 				0B6016F5221CB55D0078EE5A /* AppDelegate.swift in Sources */,
 				0B6016FD221CB55D0078EE5A /* QuotePro.xcdatamodeld in Sources */,
 				0B60170A221CB6A20078EE5A /* HomeViewController.swift in Sources */,
+				0B601716221D054B0078EE5A /* ShareViewController.swift in Sources */,
+				0B601714221CC6DA0078EE5A /* APIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

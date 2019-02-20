@@ -1,47 +1,67 @@
 
 
 import UIKit
+import CoreData
 
 class QuoteCreationViewController: UIViewController {
-
+  @IBOutlet weak var quoteView: QuoteView!
+  var author = ""
+  var quoteText = ""
+  var backgroudImg :UIImage?
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    let button1 = UIBarButtonItem(title: "Save", style: UIBarButtonItem.Style.plain, target: self, action: Selector("pressedSave")) 
+    self.navigationItem.rightBarButtonItem  = button1
+  }
+  @objc func pressedSave(){
+    print("pressed save")
+    let appDelegate = UIApplication.shared.delegate as? AppDelegate
+    //TODO make an if let
+    let context = appDelegate!.persistentContainer.viewContext
+    let quote = Quote(context: context)
+    
+    quote.author = author
+    quote.text = quoteText
+    //TODO make an if let
+    quote.imageData = backgroudImg!.pngData()
+    
+    appDelegate!.saveContext()
+    
+  }
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    let headers = [
-      "cache-control": "no-cache",
-      "Postman-Token": "db0c2960-ed6a-4f53-8166-cf5be787da00"
-    ]
+    pressedRandQuote(self)
+    pressedRandBackground(self)
+  }
+  @IBAction func pressedRandQuote(_ sender: Any) {
     
-    let request = NSMutableURLRequest(url: NSURL(string: "http://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json")! as URL,
-                                      cachePolicy: .useProtocolCachePolicy,
-                                      timeoutInterval: 10.0)
-    request.httpMethod = "POST"
-    request.allHTTPHeaderFields = headers
+    let closure = {(quote:String , author:String )->Void in
+      print("quote = \(quote) , autor = \(author)")
+      self.updateQuoteText(quote: quote, author: author)
+      
+    }
+    APIManager.getQuote(closure: closure)
+  }
+  
+  @IBAction func pressedRandBackground(_ sender: Any) {
     
-    let session = URLSession.shared
-    let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-      if (error != nil) {
-        print(error)
-      } else {
-        let httpResponse = response as? HTTPURLResponse
-        print(httpResponse)
-        
-        guard let jsonUnformatted = try? JSONSerialization.jsonObject(with: data!, options: []), let json = jsonUnformatted as? [String:String] else {
-          print("data returned is not json, or not valid ")
-          return
-        }
-        print("the json = \(json)")
-        if let quoteText = json["quoteText"] as? String, let quoteAuthor =  json["quoteAuthor"] as? String{
-          print("quote = \(quoteText) , autor = \(quoteAuthor)")
-          DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            //closure(urlString)
-          }
-        }else{
-          print("error, was not able to upload meal photo")
-        }
-      }
-    })
+    let closure = {(image:UIImage)-> Void in
+      print("running the closure")
+      self.update(image: image)
+    }
+    APIManager.getRandBackground(closure: closure)
     
-    dataTask.resume()
+  }
+  func updateQuoteText(quote:String , author:String){
+    print("running the function")
+    self.author = author
+    self.quoteText = quote
+    quoteView.update(quote: quote, author: author)
+  }
+  func update(image:UIImage){
+    self.backgroudImg = image
+    quoteView.update(image: image)
   }
 }
 
